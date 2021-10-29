@@ -1,7 +1,5 @@
 package sk.balaz.springbootmaster.customer;
 
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 public class CustomerFakeRepository implements CustomerRepo {
@@ -16,8 +14,8 @@ public class CustomerFakeRepository implements CustomerRepo {
 
         // 2. solution supported from Java 9
         return List.of(
-                new Customer(1L, "James Bond"),
-                new Customer(2L, "Jamila Conc")
+                new Customer(1L, "James Bond", "123"),
+                new Customer(2L, "Jamila Conc", "password123")
         );
     }
 }

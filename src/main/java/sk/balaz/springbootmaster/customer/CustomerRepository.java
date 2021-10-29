@@ -1,8 +1,5 @@
 package sk.balaz.springbootmaster.customer;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 public class CustomerRepository implements CustomerRepo {
@@ -20,7 +17,7 @@ public class CustomerRepository implements CustomerRepo {
 
         // 3. solution supported after Java 9
         return List.of(
-                new Customer(1L, "TODO Implement real DB")
+                new Customer(1L, "TODO Implement real DB", "TODO")
         );
     }
 }
