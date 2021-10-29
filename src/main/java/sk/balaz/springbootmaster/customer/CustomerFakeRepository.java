@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository(value = "fake")
 public class CustomerFakeRepository implements CustomerRepo {
 
     @Override
