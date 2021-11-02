@@ -6,14 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/customer")
-@Deprecated
-public class CustomerController {
+@RequestMapping(path = "api/v2/customer")
+public class CustomerControllerV2 {
 
     private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerService customerService) {
+    public CustomerControllerV2(CustomerService customerService) {
         this.customerService = customerService;
     }
 
@@ -36,6 +35,8 @@ public class CustomerController {
 
     @GetMapping(value = "all")
     List<Customer> getCustomer() {
-        return customerService.getCustomers();
+        return List.of(
+                new Customer(0L, "v2", "v2")
+        );
     }
 }
