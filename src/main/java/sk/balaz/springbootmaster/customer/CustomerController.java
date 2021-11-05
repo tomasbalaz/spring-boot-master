@@ -34,8 +34,8 @@ public class CustomerController {
         System.out.println("DELETE REQUEST FOR CUSTOMER WITH ID " + id);
     }
 
-    @GetMapping(value = "all")
-    List<Customer> getCustomer() {
+    @GetMapping
+    List<Customer> getCustomers() {
         return customerService.getCustomers();
     }
 }
