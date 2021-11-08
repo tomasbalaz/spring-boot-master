@@ -17,7 +17,7 @@ public class CustomerRepository implements CustomerRepo {
 
         // 3. solution supported after Java 9
         return List.of(
-                new Customer(1L, "TODO Implement real DB", "TODO")
+                new Customer(1L, "TODO Implement real DB", "TODO", "email@gmmail.com")
         );
     }
 }

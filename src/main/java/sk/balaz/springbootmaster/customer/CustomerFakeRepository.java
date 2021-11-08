@@ -14,8 +14,8 @@ public class CustomerFakeRepository implements CustomerRepo {
 
         // 2. solution supported from Java 9
         return List.of(
-                new Customer(1L, "James Bond", "123"),
-                new Customer(2L, "Jamila Conc", "password123")
+                new Customer(1L, "James Bond", "123", "email@gmmail.com"),
+                new Customer(2L, "Jamila Conc", "password123", "email@gmmail.com")
         );
     }
 }
