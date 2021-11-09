@@ -2,6 +2,7 @@ package sk.balaz.springbootmaster.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sk.balaz.springbootmaster.exception.ApiRequestException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -42,5 +43,12 @@ public class CustomerControllerV2 {
     @GetMapping(path = "{customerId}")
     Customer getCustomer(@PathVariable("customerId") Long id) {
         return customerService.getCustomer(id);
+    }
+
+    @GetMapping(path = "{customerId}/exception")
+    Customer getCustomerException(@PathVariable("customerId") Long id) {
+        throw new ApiRequestException(
+                "ApiRequestException for id : " + id
+        );
     }
 }
