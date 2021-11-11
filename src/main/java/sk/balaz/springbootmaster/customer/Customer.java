@@ -3,24 +3,35 @@ package sk.balaz.springbootmaster.customer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 // Jackson Fasterxml annotations
 // https://www.geeksforgeeks.org/jackson-annotations-for-java-application/
+
+@Entity
+@Table
 public class Customer {
-    private final Long id;
+
+    @Id
+    private Long id;
 
     @NotBlank(message = "name must be not empty")
-    private final String name;
+    private String name;
 
     @NotBlank(message = "password must be not empty")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private final String password;
+    private String password;
 
     @NotBlank(message = "email must be not empty")
     @Email
-    private final String email;
+    private String email;
+
+    public Customer() {
+    }
 
     public Customer(Long id, String name, String password, String email) {
         this.id = id;
