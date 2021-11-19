@@ -2,6 +2,10 @@ package sk.balaz.springbootmaster.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,6 +18,10 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Customer {
 
     @Id
@@ -29,16 +37,6 @@ public class Customer {
     @NotBlank(message = "email must be not empty")
     @Email
     private String email;
-
-    public Customer() {
-    }
-
-    public Customer(Long id, String name, String password, String email) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.email = email;
-    }
 
     @JsonProperty("customer_id")
     public Long getId() {
